@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Products;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin;
 
@@ -16,7 +17,11 @@ class ProductsController extends Controller
     public function index()
     {
         $products = Products::all();
-        return view('products/index', compact('products'));
+        $category = Category::all();
+
+        $result = array('products' => $products, 'category' => $category);
+
+        return view('products/index', compact('result'));
     }
 
     /**
@@ -47,54 +52,12 @@ class ProductsController extends Controller
      * @param  \App\Models\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(Products $products)
+    public function show($id, Products $products)
     {
-        dump($products);
-
         $arProducts = $products->all();
+        $product = $arProducts[$id];
 
-
-        $item = Products::ProductsShow($products);
-        print_R($products);
-        //return $item;
-        return response()->json($arProducts);
-        return view('products/show', compact('products' ));
+        return view('products/product', compact('product' ));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Products  $products
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Products $products)
-    {
-
-        //dd('55');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Products  $products
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Products $products)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Products  $products
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Products $products)
-    {
-        //
-    }
-
 
 }

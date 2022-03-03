@@ -21,7 +21,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::resource('products', 'App\Http\Controllers\ProductsController');
-Route::get('/product/{id}', 'ProductsController@single')->name('products.single');
+
+Route::resource('category', 'App\Http\Controllers\CategoryController');
+
+Route::resource('cart', 'App\Http\Controllers\CartController');
+Route::resource('cart/add/', 'App\Http\Controllers\CartController');
 
 Route::get('about/', function () {
     return view('about');

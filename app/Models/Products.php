@@ -31,8 +31,4 @@ class Products extends Model
         return true;
 
     }
-
-    public static function productsShow($id) {
-dump($id);
-    }
 }
