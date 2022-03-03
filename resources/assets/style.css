@@ -391,6 +391,13 @@ a {
 h2{
     margin-bottom: 0;
 }
+h1, h2 {
+    font-size: 30px;
+    margin: 25px 0px;
+}
+p {
+    margin-bottom: 15px;
+}
 .about_text {
     float: left;
     margin-left: 40px;
@@ -461,6 +468,13 @@ form div {
 .cart{
     min-height:500px;
 }
+.cart table {
+    width: 100%;
+}
+.cart td {
+    min-width:20%;
+    text-align: center;
+}
 .page-title {
     padding-right: 660px;
 }
@@ -470,4 +484,10 @@ form div {
     font-size: 19px;
     padding: 10px 100px;
     border: 2px solid #E4841E;
+}
+.checkoutF .buy {
+    max-width: 250px;
+    cursor: pointer;
+    margin: 30px 0 0;
+    padding: 10px 0;
 }

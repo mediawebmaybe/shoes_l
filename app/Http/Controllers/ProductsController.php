@@ -54,9 +54,8 @@ class ProductsController extends Controller
      */
     public function show($id, Products $products)
     {
-        $arProducts = $products->all();
-        $product = $arProducts[$id];
-
+        $arProduct = Products::select('*')->where('id', $id)->get();
+        $product = $arProduct[0];
         return view('products/product', compact('product' ));
     }
 

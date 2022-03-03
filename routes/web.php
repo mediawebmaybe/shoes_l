@@ -24,8 +24,10 @@ Route::resource('products', 'App\Http\Controllers\ProductsController');
 
 Route::resource('category', 'App\Http\Controllers\CategoryController');
 
+
+Route::get('/cart/checkout', 'App\Http\Controllers\CartController@checkout')->name('cart.checkout');
+Route::resource('cart/add', 'App\Http\Controllers\CartController');
 Route::resource('cart', 'App\Http\Controllers\CartController');
-Route::resource('cart/add/', 'App\Http\Controllers\CartController');
 
 Route::get('about/', function () {
     return view('about');

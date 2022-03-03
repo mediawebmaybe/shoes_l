@@ -9,7 +9,8 @@
                 <div class="tabs">
                     <div class="page-head">
                         <div class="page-title">
-                            <h2><?php echo $product['name'] ?></h2>
+                            <h2><?php
+                                echo $product['name'] ?></h2>
                         </div>
                     </div>
                 </div>

@@ -36,8 +36,7 @@
                     @endif
                 @endauth
             @endif
-            <a class="header-right-icon header-cart" href="/cart/" >Корзина
-                (<span id="cart-count"><?php /*echo Cart::countItems();*/?></span>)</a>
+            <a class="header-right-icon header-cart" href="/cart/" >Корзина</a>
         </div>
     </div>
 
